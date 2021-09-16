@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+ 
+<div id="app">
+<p>{{ contador }}</p>
+<button v-on:click="somar">Somar 1</button>
+<!-- evento similar ao onclick do html -->
+</div>
+ 
+<script>
+   new Vue({
+       el: '#app',
+       data: {
+           contador: 0
+       },
+       methods: {
+           somar(){
+               this.contador++
+           }
+       }
+   })
+</script>
+<!--
+ * Nota do arquivo: 
+ 
+   V-ON é uma diretiva do evento do click
+   - é equivalente ao onclick do HTML
+      
+   Obs: Se fosse usando v-once no p do contador não funcionaria.
+ 
+-->

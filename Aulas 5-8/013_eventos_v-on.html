@@ -1,0 +1,39 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+<!-- evento ON MOUSEMOVE, como o onmouseover -->
+<p v-on:mousemove="atualizaXY">
+    Mouse: {{ x }} e {{ y }}
+</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app', 
+        data: {
+            x: 0,
+            y: 0
+        },
+        methods: {
+            atualizaXY(e){
+                this.x = e.clientX
+                this.y = e.clientY                
+            }
+        },
+    })
+</script>
+<!--
+ * Nota do arquivo: 
+ 
+    Eventos javascript do DOM
+    - click
+    - mousedown
+    - keyup
+    - submit
+    - ver: https://developer.mozilla.org/pt-BR/docs/Web/Events
+
+   Links: 
+   https://br.vuejs.org/v2/api/#v-on
+   https://br.vuejs.org/v2/guide/events.html
+-->
+

@@ -1,0 +1,37 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <p>Valor Atual:{{valor}}</p>
+  <button @click="soma5">Somar 5</button>
+  <button @click="soma1">Somar 1</button>
+  <p>{{resultado}}</p>
+</div>
+
+<script type="text/javascript">
+  new Vue({
+    el: "#app",
+    data: {
+      valor: 0,
+    },
+    computed: {
+      resultado() {
+        return this.valor != 37 ? "Valor diferente de 37" : "Valor igual a 37";
+      },
+    },
+    methods: {
+      soma5: function () {
+        return this.valor+=5;
+      },
+      soma1: function () {
+        return this.valor++;
+      },
+    },
+    watch:{
+      valor(){
+        setTimeout(()=>{
+          this.valor = 0
+        }, 5000)
+      }
+    }
+  });
+</script>
